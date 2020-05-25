@@ -1,0 +1,35 @@
+<h3>Add Book</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input type="text" class="form-control" id="title" required [(ngModel)]="book.title" name="title">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Year</label>
+      <input type="number" pattern="[0-9]+" class="form-control" id="year" required [(ngModel)]="book.year" name="year">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Price</label>
+      <input type="number" pattern="[0-9]+" class="form-control" id="price" required [(ngModel)]="book.price" name="price">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Language</label>
+      <input type="text" class="form-control" id="price" required [(ngModel)]="book.language" name="language">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Catagory</label>
+      <input type="text" class="form-control" id="catagory" required [(ngModel)]="book.catagory" name="catagory">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+ </div>
